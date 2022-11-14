@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58A14B0F-5411-4E44-8D85-3D059B6D18D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KYRSACH</RootNamespace>
+    <AssemblyName>KYRSACH</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExceptionIncorrectInput.cs" />
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FillIdentifiers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FillIdentifiers.Designer.cs">
+      <DependentUpon>Form_FillIdentifiers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddFunction.Designer.cs">
+      <DependentUpon>FormAddFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPN.cs" />
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FillIdentifiers.resx">
+      <DependentUpon>Form_FillIdentifiers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddFunction.resx">
+      <DependentUpon>FormAddFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KYRSACH.Evaluator\KYRSACH.Evaluator.csproj">
+      <Project>{3dc2949a-219b-4465-8097-ece5b888fe93}</Project>
+      <Name>KYRSACH.Evaluator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KYRSACH.Operator\KYRSACH.Operator.csproj">
+      <Project>{8af0f352-be71-4cb8-8ad1-0c163f4599d5}</Project>
+      <Name>KYRSACH.Operator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KYRSACH.ShuntingYard\KYRSACH.ShuntingYard.csproj">
+      <Project>{b75e1978-18a8-47a1-9465-b8172e310ecf}</Project>
+      <Name>KYRSACH.ShuntingYard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathParser\MathParser.csproj">
+      <Project>{7e1e6e47-6b9c-4e79-9dcd-b181796b1ba9}</Project>
+      <Name>MathParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tokenizer\KYRSACH.Tokenizer.csproj">
+      <Project>{8afd5670-91b4-42a7-a39f-2e5d557f707e}</Project>
+      <Name>KYRSACH.Tokenizer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
