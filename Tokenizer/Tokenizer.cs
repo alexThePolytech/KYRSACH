@@ -22,6 +22,8 @@ namespace Tokenizer
             //tokens.Add("^[,]"); // matches ,
             tokens.Add("^[\\)]"); // matches closing bracket
 
+            expression = expression.Replace(" ", "");
+
             while (0 != expression.Length)
             {
                 bool foundMatch = false;

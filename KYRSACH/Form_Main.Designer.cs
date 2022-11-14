@@ -90,9 +90,12 @@
             this.richTextBox_Result.Size = new System.Drawing.Size(354, 103);
             this.richTextBox_Result.TabIndex = 0;
             this.richTextBox_Result.Text = "";
+            this.richTextBox_Result.TextChanged += new System.EventHandler(this.richTextBox_Result_TextChanged);
+            this.richTextBox_Result.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox_Result_KeyDown);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainToolStripMenuItem,
@@ -100,7 +103,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(354, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(354, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,7 +112,7 @@
             this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.evaluateFromTextFileToolStripMenuItem});
             this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(54, 30);
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.mainToolStripMenuItem.Text = "File";
             // 
             // evaluateFromTextFileToolStripMenuItem
@@ -124,7 +127,7 @@
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.functionToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(62, 30);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // functionToolStripMenuItem
@@ -140,7 +143,7 @@
             this.aboutToolStripMenuItem,
             this.howToUseToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem

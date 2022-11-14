@@ -18,6 +18,7 @@ namespace ShuntingYard
             var operandStack = new Stack<string>();
             //var inputArray = input.Split(' ');
             var inputArray = Tokenizer.Tokenizer.Tokenize(input);
+            inputArray = AdjustMonoperations(inputArray);
             int countOp = 0, countCl = 0;
 
             for(int i = 0; i < inputArray.Length; i++)
